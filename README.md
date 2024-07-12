@@ -2,9 +2,9 @@
 
 项目来自本人参加的重庆大学软件工程2021级大三下实训。
 
-项目参考了CHatGLM和Chat on Wechat项目，均在github上。
+项目参考了CHatGLM项目https://github.com/zhayujie/chatgpt-on-wechat.git
 
-
+Chat on Wechat项目https://github.com/THUDM/ChatGLM3.git
 
 # 功能介绍：
 
@@ -20,7 +20,7 @@ Web端：也能进行对话，可以使用工具、代码解释器、能切换�
 
 # 部署说明：
 
-先完成ChatGLM3项目的模型部署：参考
+先完成ChatGLM3项目的模型部署：参考https://github.com/zhayujie/chatgpt-on-wechat.git
 
 环境配置请参考ChatonWechat项目和ChatGLM项目。建议使用虚拟环境
 
