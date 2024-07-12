@@ -36,11 +36,11 @@ Web端：也能进行对话，可以使用工具、代码解释器、能切换�
 
 这里需要下载的模型ChatGLM3 和bge-m3。请在github上下载并配置环境。
 
-![img](file:///C:\Users\lei'berber\AppData\Roaming\Tencent\Users\3126098515\QQ\WinTemp\RichOle\Q4RSXLE_`64MFFELA4BBH$O.png)
+![](D:\AI_bot\iamge\model.png)
 
 运行api_server.py即可启动本地服务器
 
-![](C:\Users\lei'berber\Desktop\7K]T{${6{_I(8E%3NR8K(FX.png)
+![](D:\AI_bot\iamge\api_server.png)
 
 路径可以自己设置
 
@@ -80,6 +80,5 @@ Web端：也能进行对话，可以使用工具、代码解释器、能切换�
 
 #### 看看生成的可爱猫猫：
 
-![image-20240705173546033](C:\Users\lei'berber\AppData\Roaming\Typora\typora-user-images\image-20240705173546033.png)!(C:\Users\lei'berber\AppData\Roaming\Typora\typora-user-images\image-20240705173544862.png)
-
+![](D:\AI_bot\iamge\cute_cat.png)
 

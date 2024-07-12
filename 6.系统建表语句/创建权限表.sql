@@ -1,6 +1,0 @@
-USE SmartQA;
-CREATE TABLE Permissions (
-    PermissionID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
-    PermissionType VARCHAR(50) NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)

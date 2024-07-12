@@ -1,0 +1,9 @@
+USE SmartQA;
+CREATE TABLE Questions (
+    QuestionID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    Content TEXT NOT NULL,
+    Type ENUM('文字', '语音') NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);

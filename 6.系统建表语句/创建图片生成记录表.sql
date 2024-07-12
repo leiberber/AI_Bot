@@ -1,9 +1,0 @@
-USE SmartQA;
-CREATE TABLE ImageGenerationRecords (
-    RecordID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
-    Keyword VARCHAR(255) NOT NULL,
-    GeneratedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ImageURL VARCHAR(255),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
