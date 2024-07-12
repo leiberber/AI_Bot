@@ -1,0 +1,4 @@
+[theme]
+font = "monospace"
+[server]
+port = 8550

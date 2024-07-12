@@ -1,0 +1,1 @@
+streamlit run main.py --server.port 8520 --server.address 0.0.0.0

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>系统设置</title>
+   <style>
+       * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+       }
+       body {
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background-color: #f0f2f5;
+           color: #333;
+       }
+       .container {
+           display: flex;
+           min-height: 100vh;
+       }
+       .sidebar {
+           width: 250px;
+           background-color: #2c3e50;
+           color: #ecf0f1;
+           padding: 20px;
+       }
+       .logo {
+           font-size: 24px;
+           font-weight: bold;
+           margin-bottom: 30px;
+           text-align: center;
+       }
+       .menu {
+           list-style-type: none;
+       }
+       .menu li {
+           margin-bottom: 15px;
+       }
+       .menu a {
+           color: #ecf0f1;
+           text-decoration: none;
+           display: block;
+           padding: 10px;
+           border-radius: 5px;
+           transition: background-color 0.3s;
+       }
+       .menu a:hover, .menu a.active {
+           background-color: #34495e;
+       }
+       .main-content {
+           flex-grow: 1;
+           padding: 20px;
+           background-color: #ecf0f1;
+       }
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           margin-bottom: 20px;
+       }
+       .settings-table {
+           width: 100%;
+           border-collapse: collapse;
+           margin-top: 20px;
+       }
+       .settings-table th, .settings-table td {
+           border: 1px solid #bdc3c7;
+           padding: 12px;
+           text-align: left;
+       }
+       .settings-table th {
+           background-color: #3498db;
+           color: white;
+       }
+       .settings-table tr:nth-child(even) {
+           background-color: #f2f2f2;
+       }
+       .action-buttons button {
+           padding: 5px 10px;
+           margin-right: 5px;
+           border: none;
+           border-radius: 3px;
+           cursor: pointer;
+       }
+       .edit-btn {
+           background-color: #2ecc71;
+           color: white;
+       }
+       .save-btn {
+           background-color: #3498db;
+           color: white;
+       }
+   </style>
+</head>
+<body>
+<div class="container">
+   <aside class="sidebar">
+       <div class="logo">管理系统</div>
+       <ul class="menu">
+           <li><a href="{{ url_for('user_manage') }}">用户管理</a></li>
+           <li><a href="{{ url_for('quanxian_manage') }}">权限设置</a></li>
+           <li><a href="#" class="active">系统设置</a></li>
+           <li><a href="{{ url_for('log_check') }}">日志查询</a></li>
+       </ul>
+   </aside>
+   <main class="main-content">
+       <header class="header">
+           <h1>系统设置</h1>
+       </header>
+       <section class="settings-list">
+           <table class="settings-table">
+               <thead>
+               <tr>
+                   <th>设置项</th>
+                   <th>当前值</th>
+                   <th>操作</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                   <td>网站名称</td>
+                   <td>我的管理系统</td>
+                   <td class="action-buttons">
+                       <button class="edit-btn">编辑</button>
+                       <button class="save-btn">保存</button>
+                   </td>
+               </tr>
+               <tr>
+                   <td>管理员邮箱</td>
+                   <td>admin@example.com</td>
+                   <td class="action-buttons">
+                       <button class="edit-btn">编辑</button>
+                       <button class="save-btn">保存</button>
+                   </td>
+               </tr>
+               <tr>
+                   <td>默认语言</td>
+                   <td>中文（简体）</td>
+                   <td class="action-buttons">
+                       <button class="edit-btn">编辑</button>
+                       <button class="save-btn">保存</button>
+                   </td>
+               </tr>
+               <tr>
+                   <td>时区设置</td>
+                   <td>中国标准时间 (GMT+8)</td>
+                   <td class="action-buttons">
+                       <button class="edit-btn">编辑</button>
+                       <button class="save-btn">保存</button>
+                   </td>
+               </tr>
+               </tbody>
+           </table>
+       </section>
+   </main>
+</div>
+</body>
+</html>

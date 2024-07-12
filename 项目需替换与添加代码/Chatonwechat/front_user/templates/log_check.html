@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日志查询</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .menu {
+            list-style-type: none;
+        }
+        .menu li {
+            margin-bottom: 15px;
+        }
+        .menu a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover, .menu a.active {
+            background-color: #34495e;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .log-search {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .log-search input, .log-search select {
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 3px;
+        }
+        .log-search button {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .log-table th, .log-table td {
+            border: 1px solid #bdc3c7;
+            padding: 12px;
+            text-align: left;
+        }
+        .log-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .log-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="logo">管理系统</div>
+        <ul class="menu">
+            <li><a href="{{ url_for('user_manage') }}">用户管理</a></li>
+            <li><a href="{{ url_for('quanxian_manage') }}">权限设置</a></li>
+            <li><a href="{{ url_for('sys_manage') }}">系统设置</a></li>
+            <li><a href="#" class="active">日志查询</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <header class="header">
+            <h1>日志查询</h1>
+        </header>
+        <section class="log-search">
+            <input type="date" placeholder="开始日期">
+            <input type="date" placeholder="结束日期">
+            <select>
+                <option value="">所有类型</option>
+                <option value="login">登录</option>
+                <option value="operation">操作</option>
+                <option value="error">错误</option>
+            </select>
+            <input type="text" placeholder="关键字搜索">
+            <button>搜索</button>
+        </section>
+        <section class="log-list">
+            <table class="log-table">
+                <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>用户</th>
+                    <th>操作类型</th>
+                    <th>详细信息</th>
+                    <th>IP地址</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2023-06-27 10:15:30</td>
+                    <td>admin</td>
+                    <td>登录</td>
+                    <td>管理员登录成功</td>
+                    <td>192.168.1.100</td>
+                </tr>
+                <tr>
+                    <td>2023-06-27 11:20:45</td>
+                    <td>user1</td>
+                    <td>操作</td>
+                    <td>修改个人信息</td>
+                    <td>192.168.1.101</td>
+                </tr>
+                <!-- 可以添加更多日志行 -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+</body>
+</html>

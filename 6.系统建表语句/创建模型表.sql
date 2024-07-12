@@ -1,0 +1,7 @@
+USE SmartQA;
+CREATE TABLE Models (
+    ModelID INT PRIMARY KEY AUTO_INCREMENT,
+    ModelName VARCHAR(50) NOT NULL,
+    Description TEXT,
+    CurrentState BOOLEAN DEFAULT FALSE
+);

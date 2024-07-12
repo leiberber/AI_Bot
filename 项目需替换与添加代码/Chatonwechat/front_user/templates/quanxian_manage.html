@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>权限设置</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .menu {
+            list-style-type: none;
+        }
+        .menu li {
+            margin-bottom: 15px;
+        }
+        .menu a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover, .menu a.active {
+            background-color: #34495e;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .permissions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .permissions-table th, .permissions-table td {
+            border: 1px solid #bdc3c7;
+            padding: 12px;
+            text-align: left;
+        }
+        .permissions-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .permissions-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .action-buttons button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .edit-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .save-btn {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="logo">管理系统</div>
+        <ul class="menu">
+            <li><a href="{{ url_for('user_manage') }}">用户管理</a></li>
+            <li><a href="#" class="active">权限设置</a></li>
+            <li><a href="{{ url_for('sys_manage') }}">系统设置</a></li>
+            <li><a href="{{ url_for('log_check') }}">日志查询</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <header class="header">
+            <h1>权限设置</h1>
+        </header>
+        <section class="permissions-list">
+            <table class="permissions-table">
+                <thead>
+                <tr>
+                    <th>用户ID</th>
+                    <th>用户名</th>
+                    <th>角色</th>
+                    <th>权限</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>管理员</td>
+                    <td>全部权限</td>
+                    <td class="action-buttons">
+                        <button class="edit-btn">编辑</button>
+                        <button class="save-btn">保存</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>普通用户</td>
+                    <td>查看权限</td>
+                    <td class="action-buttons">
+                        <button class="edit-btn">编辑</button>
+                        <button class="save-btn">保存</button>
+                    </td>
+                </tr>
+                <!-- 可以添加更多用户行 -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/static/style.css">
+    <title>注册</title>
+</head>
+<body>
+    <div class="container">
+    <h1>管理员注册</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label name="new-username">选择用户名:</label>
+            <input type="text" name="username"/>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label name="new-password">设置密码:</label>
+            <input type="password" name="password"/>
+        </div>
+        <br/>
+        <br/>
+        <div class="form-group">
+            <input type="submit" value="注册" />
+        </div>
+        <a href="{{ url_for('manager_login') }}">登录</a>
+    </form>
+    </div>
+</body>
+</html>
+
+
+
+
